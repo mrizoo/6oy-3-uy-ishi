@@ -28,18 +28,16 @@ function App() {
   //  ================================
   // rating
   const filterByRating = (rating) => {
-    if (rating === "all") {
+    setProducts(allProducts);
+    if (rating == "all") {
       setProducts(allProducts);
     } else {
-      const minRating = parseInt(rating);
-      const maxRating = minRating + 0.2;
       const filterRate = allProducts.filter((product) => {
-        return product.rating >= minRating && product.rating < maxRating;
+        return product.rating == rating;
       });
       setProducts(filterRate);
     }
   };
-
   return (
     <div>
       <div className="filter_container">
